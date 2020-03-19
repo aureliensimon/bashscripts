@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# TODO : difference MB, GB
+# TODO : difference KB, MB, GB
 
 # total space saved
 totalSpace=0
@@ -18,7 +18,7 @@ spaceCache=$(du -sh /var/cache/apt | grep -o '[0-9]*')
 totalSpace=$[totalSpace + spaceCache]
 
 apt-get clean
-printDone $journal
+printDone $cache
 
 # Clearing journal logs
 echo 'Clear journal logs > 3 days old ...'
