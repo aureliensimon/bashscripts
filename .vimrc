@@ -3,11 +3,22 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'luochen1990/rainbow'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'preservim/nerdtree'
+	Plug 'preservim/nerdcommenter'
 call plug#end()
 
 set laststatus=2
 set number
 set belloff=all
+
+" Comment	:	, + cc
+" Uncomment	:	, + ci
+let mapleader=","
+set timeout timeoutlen=1500
+
+" Hide / Show NERDTree	:	NERDTreeToggle"
+autocmd vimenter * NERDTree
+autocmd bufenter * if(winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:rainbow_active=1
 
