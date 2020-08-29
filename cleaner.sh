@@ -2,7 +2,7 @@
 
 # TODO : difference KB, MB, GB
 
-# total space saved
+# Global variables
 totalSpace=0
 space=0
 size=0
